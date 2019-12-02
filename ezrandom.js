@@ -341,7 +341,7 @@ function getRounds(count) {
   for(var i=0;i<count;i++) {
     var a = Math.abs(singleRound() - baseLine) % 65536;
     var b = Math.abs(singleRound() - baseLine) % 65536;
-    result.push((a<<16) b);
+    result.push((a<<16) | b);
   }
   
   return result;
