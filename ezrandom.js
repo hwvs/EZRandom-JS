@@ -1,7 +1,7 @@
 /**
  * @name EZRandom Library
  * @file ezrandom.js
- * @website https://github.com/hwvs/EZRandom-JS/
+ * @copyright https://github.com/hwvs/EZRandom-JS/
  * @license MIT License ( https://opensource.org/licenses/MIT )
  * @version 1.0.0
  * 
