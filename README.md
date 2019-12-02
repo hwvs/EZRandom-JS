@@ -5,8 +5,12 @@ Uses [window.crypto if available (all modern browsers)](https://caniuse.com/#fea
 
 # Example Usage
 ```
+ <script src="js/ezrandom.js"></script> 
+```
+
+```
  console.log("Random string: " + randomString(16));
  console.log("Random password: " + randomPassword(16));
  console.log("Random letters: " + randomAlpha(16));
  console.log("Random lowercase: " + randomAlphaLower(16));
- ```
+```
