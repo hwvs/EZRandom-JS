@@ -361,7 +361,7 @@ function getISAACRandomness(count) {
 
 
 function getEntropy(length, onlyISAAC) {
-  onlyISAAC = (typeof onlyISAAC !== 'undefined') ?  onlyISAAC : 16;
+  onlyISAAC = (typeof onlyISAAC !== 'undefined') ?  onlyISAAC : false;
   if (window.crypto.getRandomValues !== undefined && !onlyISAAC) {
     var array = new Uint32Array(length);
     window.crypto.getRandomValues(array);
