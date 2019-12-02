@@ -6,14 +6,14 @@
  * Provides easy-to-use functions to generate secure-random strings.
  * 
  * Uses window.crypto if available (all modern browsers) or falls back to a custom ISAAC
- * CSPRNG if it’s not available.
+ * CSPRNG if it's not available.
  *
  * Includes ISAAC Cipher from ImagineProgramming (MIT License)
  *
- * Example Usage: console.log(“Random string: ” + randomString(16));
- * Example Usage: console.log(“Random password: ” + randomPassword(16));
- * Example Usage: console.log(“Random letters: ” + randomAlpha(16));
- * Example Usage: console.log(“Random lowercase: ” + randomAlphaLower(16));
+ * Example Usage: console.log("Random string: " + randomString(16));
+ * Example Usage: console.log("Random password: " + randomPassword(16));
+ * Example Usage: console.log("Random letters: " + randomAlpha(16));
+ * Example Usage: console.log("Random lowercase: " + randomAlphaLower(16));
  */
 
 
@@ -327,7 +327,7 @@ function singleRound() {
   }
  
   if(i == 0) {
-    // this isn’t good, the CPU is not fast enough. This shouldn’t ever happen, but just in case, let’s return at least something with some kind of entropy. Alternatively, throw an exception.
+    // this isn't good, the CPU is not fast enough. This shouldn't ever happen, but just in case, let's return at least something with some kind of entropy. Alternatively, throw an exception.
     return Math.floor((screen.left << 16) + (screen.top << 8) + (screen.width << 4) + (window.scrollY << 16) + (new Date()).getTime()  + (Math.random()*0xffffffff)) % 0xFFFFFFFF;
   } 
   return i;
@@ -339,7 +339,7 @@ function getRounds(count = 256) {
   for(var i=0;i<count;i++) {
     var a = Math.abs(singleRound() - baseLine) % 65536;
     var b = Math.abs(singleRound() - baseLine) % 65536;
-    result.push((a<<16)|b);
+    result.push((a<<16) b);
   }
   
   return result;
