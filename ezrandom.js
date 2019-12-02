@@ -2,6 +2,7 @@
  * @name EZRandom Library
  * @file ezrandom.js
  * @license MIT License ( https://opensource.org/licenses/MIT )
+ * @version 1.0.0
  * 
  * Provides easy-to-use functions to generate secure-random strings.
  * 
