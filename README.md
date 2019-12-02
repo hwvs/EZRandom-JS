@@ -5,7 +5,7 @@ Uses [window.crypto if available (all modern browsers)](https://caniuse.com/#fea
 
 # Example Usage
 ```
- <script src="js/ezrandom.js"></script> 
+ <script src="js/ezrandom.min.js"></script> 
 ```
 
 ```
