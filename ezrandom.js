@@ -334,7 +334,8 @@ function singleRound() {
   return i;
 }
 
-function getRounds(count = 256) {
+function getRounds(count) {
+  count = (typeof count !== 'undefined') ?  count : 256;
   var result = [];
   var baseLine = singleRound();
   for(var i=0;i<count;i++) {
@@ -346,7 +347,8 @@ function getRounds(count = 256) {
   return result;
 }
 
-function getISAACRandomness(count=16) {
+function getISAACRandomness(count) {
+	count = (typeof count !== 'undefined') ?  count : 16;
 	var isaac = new ISAAC(getRounds());
 	var result = [];
 
@@ -358,7 +360,8 @@ function getISAACRandomness(count=16) {
 }
 
 
-function getEntropy(length, onlyISAAC = false) {
+function getEntropy(length, onlyISAAC) {
+  onlyISAAC = (typeof onlyISAAC !== 'undefined') ?  onlyISAAC : 16;
   if (window.crypto.getRandomValues !== undefined && !onlyISAAC) {
     var array = new Uint32Array(length);
     window.crypto.getRandomValues(array);
@@ -372,10 +375,12 @@ function getEntropy(length, onlyISAAC = false) {
 
 // Stuff you probably want to use below
 
-function randomArray(length = 16) {
+function randomArray(length) {
+  length = (typeof length !== 'undefined') ?  length : 16;
 	return getEntropy(length);
 }
-function randomBytes(length = 16) {
+function randomBytes(length) {
+  length = (typeof length !== 'undefined') ?  length : 16;
  var result = [];
   var entropy = getEntropy(length);
   
@@ -386,7 +391,10 @@ function randomBytes(length = 16) {
   return result;
 }
 
-function randomString(length = 16, chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890") {
+function randomString(length, chars) {
+  length = (typeof length !== 'undefined') ? length : 16;
+  chars = (typeof chars !== 'undefined') ?  chars : "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+	
   var result = "";
   var entropy = getEntropy(length);
   
@@ -397,18 +405,23 @@ function randomString(length = 16, chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJ
   return result;
 }
 
-function randomAlpha(length = 16) {
+function randomAlpha(length) {
+  length = (typeof length !== 'undefined') ? length : 16;
   return randomString(length, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
 }
-function randomAlphaUpper(length = 16) {
+function randomAlphaUpper(length) {
+  length = (typeof length !== 'undefined') ? length : 16;
   return randomString(length, "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 }
-function randomAlphaLower(length = 16) {
+function randomAlphaLower(length) {
+  length = (typeof length !== 'undefined') ? length : 16;
   return randomString(length, "abcdefghijklmnopqrstuvwxyz");
 }
-function randomDigits(length = 16) {
+function randomDigits(length) {
+  length = (typeof length !== 'undefined') ? length : 16;
   return randomString(length, "1234567890");
 }
-function randomPassword(length = 16) {
+function randomPassword(length) {
+  length = (typeof length !== 'undefined') ? length : 16;
   return randomString(length, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*-_=+?.");
 }
